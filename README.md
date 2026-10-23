@@ -2,7 +2,7 @@
   <tr>
     <td align="center">
       <a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1" target="_blank">
-        <img src="https://www.esa.int/var/esa/storage/images/applications/observing_the_earth/copernicus/sentinel-1/19729210-29-eng-GB/Sentinel-1_pillars.png" width="130" alt="Sentinel-1 mission">
+        <img src="Example/IMG/Sentinel-1_mission.png" width="130" alt="Sentinel-1 mission">
       </a>
       <br>
       <b>👤 Julian Manning</b>
