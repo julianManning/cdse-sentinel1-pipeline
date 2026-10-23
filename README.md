@@ -1,3 +1,23 @@
+<table align="right">
+  <tr>
+    <td align="center">
+      <a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1" target="_blank">
+        <img src="https://www.esa.int/var/esa/storage/images/applications/observing_the_earth/copernicus/sentinel-1/19729210-29-eng-GB/Sentinel-1_pillars.png" width="130" alt="Sentinel-1 mission">
+      </a>
+      <br>
+      <b>👤 Julian Manning</b>
+      <br>
+      <sub>♻️ Last updated: <b>October 2026</b></sub>
+      <br>
+      <sub>📝 <b>Sentinel-1 Download Workflow</b></sub>
+      <br>
+      <sub>📧 <a href="mailto:julian.manning@outlook.com">julian.manning@outlook.com</a></sub>
+      <br>
+      <sub>🔗 Connect on <a href="https://www.linkedin.com/in/julian-manning/">LinkedIn</a></sub>
+    </td>
+  </tr>
+</table>
+
 # 🧑‍💻 cdse-sentinel1-pipeline
 
 A high-throughput, multithreaded Python pipeline for querying and downloading Sentinel-1 SAR products from the modern Copernicus Data Space Ecosystem (CDSE). It features SAR-aware product filtering (sensor mode, product type, polarisation, orbit direction, relative orbit), pass-level ROI coverage filtering that understands Sentinel-1's along-track slicing, a selection preview with footprint map and volume estimate, resumable downloads, a fully automated Conda/Jupyter environment setup, and batch extraction to analysis-ready `.SAFE` directories.
@@ -11,7 +31,7 @@ If you work with satellite imagery, you likely know the bad news: the legacy **C
 While the standard CDSE web portal is fine for downloading a few single scenes, teams tackling **complex study areas, large geographic boundaries, or extensive SAR time-series** need an automated, programmatic pipeline.
 
 ### Why not just use Cloud platforms (GEE, Planetary Computer)?
-Cloud-native ecosystems have made basic SAR analysis accessible, but scaling professional radar pipelines on public cloud infrastructure routinely may hit three brick walls:
+Cloud-native ecosystems have made basic SAR analysis accessible, but scaling professional radar pipelines on public cloud infrastructure routinely hits three brick walls:
 1. **Pre-Processed, Amplitude-Only Archives:** Cloud catalogues typically host Sentinel-1 GRD data that has already been calibrated, noise-corrected and terrain-corrected with fixed processing choices — and no Single Look Complex (SLC) phase data. If your workflow needs InSAR, coherence, custom calibration (β⁰ / σ⁰ / γ⁰), your own speckle filtering, or the native `.SAFE` annotation and calibration XMLs for SNAP / `esa_snappy`, ISCE or GAMMA, you are locked out.
 2. **The Commercial Paywall:** Tools like Google Earth Engine (GEE) are phenomenal for non-commercial research, but moving those identical workflows into an enterprise environment requires paid Google Cloud accounts with strict billing models tied to compute and storage consumption.
 3. **Severe Quotas:** Processing extensive spatial boundaries on free cloud tiers routinely triggers server-side memory timeouts, strict API rate limits, and massive export queuing delays.
@@ -35,6 +55,16 @@ Instead of building a convoluted "black-box" Python package, this repository is 
 
 ---
 
+## 🗺️ Example Output
+
+Footprint preview from `p01_s1_download_pipeline.ipynb` — Sentinel-1C/1D IW GRDH passes (1–20 Oct 2026) over a Strait of Hormuz ROI (red box). Ascending passes in blue, descending in orange.
+
+![Sentinel-1 footprints over the Strait of Hormuz ROI](Example/IMG/s1_footprints_hormuz.png)
+
+> 📌 **Interactive maps on GitHub**: The notebooks' Folium maps are HTML/JavaScript outputs, which GitHub's notebook preview does not execute — it displays *"Make this Notebook Trusted to load map"* instead. This is a GitHub rendering limitation, not an error: the maps are fully interactive when the notebooks are run locally in Jupyter, and can be exported to standalone `.html` files via the `save_path` argument.
+
+---
+
 ## 📂 Repository Structure
 
 ```text
@@ -54,8 +84,9 @@ cdse-sentinel1-pipeline/
 │   ├── s1_download_env_builder.py    # Conda & Jupyter lifecycle automation script
 │   └── s1_download_helper_utility.py # Catalogue querying, S1 filtering, pass coverage & multithreaded downloads
 │
-└── Example/                          # Sample geospatial inputs for out-of-the-box evaluation
-    └── SHP/                          # Target Region of Interest (ROI) vector layers
+└── Example/                          # Sample geospatial inputs & outputs for out-of-the-box evaluation
+    ├── SHP/                          # Target Region of Interest (ROI) vector layers
+    └── IMG/                          # Static map previews used in this README
 ```
 
 ## 🚀 Execution Workflow
