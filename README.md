@@ -1,5 +1,7 @@
 # 🧑‍💻 cdse-sentinel1-pipeline
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23595216.svg)](https://doi.org/10.5281/zenodo.23595216)
+
 <table align="right">
   <tr>
     <td align="center">
@@ -135,10 +137,10 @@ Open `p02_s1_download_unzip.ipynb`. Run the batch extractor to expand downloaded
 * Storage: IW GRDH products are ~1–1.7 GB per slice; IW SLC products are ~4–8 GB. Use the preview cell's volume estimate before large queries.
 
 ## 🔗 Related
-* **[cdse-sentinel2-pipeline](https://github.com/julianManning/cdse-sentinel2-pipeline)** — the companion workflow for Sentinel-2 multispectral (L1C/L2A) imagery.
+* **[cdse-sentinel2-pipeline](https://github.com/julianManning/cdse-sentinel2-pipeline)** ([DOI: 10.5281/zenodo.23598342](https://doi.org/10.5281/zenodo.23598342)) — the companion workflow for Sentinel-2 multispectral (L1C/L2A) imagery.
 
 ## 📚 Citation & Data Attribution
-* **Citing this software**: use **"Cite this repository"** in the GitHub sidebar (generated from `CITATION.cff`).
+* **Citing this software**: use **"Cite this repository"** in the GitHub sidebar (generated from `CITATION.cff`), or cite the Zenodo archive: **[doi:10.5281/zenodo.23595216](https://doi.org/10.5281/zenodo.23595216)**.
 * **Copernicus data**: products derived from data downloaded with this pipeline should carry the notice *"Contains modified Copernicus Sentinel data [year]"*, as required by the Copernicus Sentinel data licence.
 
 ## 🛡️ License
