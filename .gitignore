@@ -1,0 +1,17 @@
+# Downloaded satellite data (can be many GB)
+DATA/S1/
+DATA/S2/
+DATA/UNZIP/
+DATA/*.zip
+DATA/*.csv
+*.zip
+*.zip.part
+*.SAFE/
+
+# Local backups
+_backup_*/
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
