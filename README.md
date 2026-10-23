@@ -80,13 +80,14 @@ cdse-sentinel1-pipeline/
 ├── p01_s1_download_pipeline.ipynb    # Step 1: Spatial query, SAR filtering, preview & threaded download
 ├── p02_s1_download_unzip.ipynb       # Step 2: Automated extraction to structured .SAFE directories
 │
-├── DATA/                             # Local data vault (ignored by git)
+├── DATA/                             # Local data vault (downloads ignored by git)
+│   ├── SHP/                          # Your study-area ROI shapefiles (committed)
 │   └── S1/<year>/                    # Downloaded .zip archives + CSV download log
 │       └── UNZIP/                    # Target directory for unzipped .SAFE archives
 │
 ├── Tools/                            # Core pipeline backend orchestration engines
 │   ├── env.base.yml                  # Loose environment specs for development
-│   ├── env.lock.yml                  # (Optional) version-pinned lockfile: conda env export -n sentinel1
+│   ├── env.lock.yml                  # Fully version-pinned production lockfile
 │   ├── s1_download_env_builder.py    # Conda & Jupyter lifecycle automation script
 │   └── s1_download_helper_utility.py # Catalogue querying, S1 filtering, pass coverage & multithreaded downloads
 │
@@ -130,8 +131,15 @@ Open `p02_s1_download_unzip.ipynb`. Run the batch extractor to expand downloaded
 * Active user credentials on the Copernicus Data Space Ecosystem.
 * An existing installation of Miniconda / Anaconda.
 * Python: Version 3.11 was used for the asynchronous environment manager.
-* Dependencies: All secondary libraries are managed via the included `Tools/env.base.yml` file (and `Tools/env.lock.yml` once exported).
+* Dependencies: All secondary libraries are managed via the included `Tools/env.base.yml` and version-pinned `Tools/env.lock.yml` files.
 * Storage: IW GRDH products are ~1–1.7 GB per slice; IW SLC products are ~4–8 GB. Use the preview cell's volume estimate before large queries.
+
+## 🔗 Related
+* **[cdse-sentinel2-pipeline](https://github.com/julianManning/cdse-sentinel2-pipeline)** — the companion workflow for Sentinel-2 multispectral (L1C/L2A) imagery.
+
+## 📚 Citation & Data Attribution
+* **Citing this software**: use **"Cite this repository"** in the GitHub sidebar (generated from `CITATION.cff`).
+* **Copernicus data**: products derived from data downloaded with this pipeline should carry the notice *"Contains modified Copernicus Sentinel data [year]"*, as required by the Copernicus Sentinel data licence.
 
 ## 🛡️ License
 This project is open-source and available under the **[MIT License](https://opensource.org/licenses/MIT)**. You are free to use, modify, and distribute this software for personal, academic, or commercial projects.
