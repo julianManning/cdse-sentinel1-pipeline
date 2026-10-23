@@ -11,7 +11,7 @@ If you work with satellite imagery, you likely know the bad news: the legacy **C
 While the standard CDSE web portal is fine for downloading a few single scenes, teams tackling **complex study areas, large geographic boundaries, or extensive SAR time-series** need an automated, programmatic pipeline.
 
 ### Why not just use Cloud platforms (GEE, Planetary Computer)?
-Cloud-native ecosystems have made basic SAR analysis accessible, but scaling professional radar pipelines on public cloud infrastructure routinely hits three brick walls:
+Cloud-native ecosystems have made basic SAR analysis accessible, but scaling professional radar pipelines on public cloud infrastructure routinely may hit three brick walls:
 1. **Pre-Processed, Amplitude-Only Archives:** Cloud catalogues typically host Sentinel-1 GRD data that has already been calibrated, noise-corrected and terrain-corrected with fixed processing choices — and no Single Look Complex (SLC) phase data. If your workflow needs InSAR, coherence, custom calibration (β⁰ / σ⁰ / γ⁰), your own speckle filtering, or the native `.SAFE` annotation and calibration XMLs for SNAP / `esa_snappy`, ISCE or GAMMA, you are locked out.
 2. **The Commercial Paywall:** Tools like Google Earth Engine (GEE) are phenomenal for non-commercial research, but moving those identical workflows into an enterprise environment requires paid Google Cloud accounts with strict billing models tied to compute and storage consumption.
 3. **Severe Quotas:** Processing extensive spatial boundaries on free cloud tiers routinely triggers server-side memory timeouts, strict API rate limits, and massive export queuing delays.
