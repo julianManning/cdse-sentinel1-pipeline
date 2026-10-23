@@ -4,7 +4,7 @@
   <tr>
     <td align="center">
       <a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1" target="_blank">
-        <img src="Example/IMG/Sentinel-1_mission.png" width="130" alt="Sentinel-1 mission">
+        <img src="Example/IMG/Sentinel-1_mission.png" width="110" alt="Sentinel-1 mission">
       </a>
       <br>
       <b>👤 Julian Manning</b>
@@ -21,6 +21,9 @@
 </table>
 
 A high-throughput, multithreaded Python pipeline for querying and downloading Sentinel-1 SAR products from the modern Copernicus Data Space Ecosystem (CDSE). It features SAR-aware product filtering (sensor mode, product type, polarisation, orbit direction, relative orbit), pass-level ROI coverage filtering that understands Sentinel-1's along-track slicing, a selection preview with footprint map and volume estimate, resumable downloads, a fully automated Conda/Jupyter environment setup, and batch extraction to analysis-ready `.SAFE` directories.
+
+
+<br clear="right">
 
 ---
 
